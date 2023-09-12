@@ -1,0 +1,11 @@
+---
+- name: Install remote facts
+  hosts: webserver
+  vars:
+    remote_dir: /etc/ansible/facts.d
+    facts_file: custom.fact
+  tasks:
+    - name: Delete the remote directory
+      file:
+        path: "{{ remote_dir }}"
+        state: absent
