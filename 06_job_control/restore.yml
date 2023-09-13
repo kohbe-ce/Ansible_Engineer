@@ -1,0 +1,12 @@
+---
+- name: Restore DB
+  hosts: databases
+  tasks:
+    # DB install
+    - name: httpd package remove
+      yum:
+        name: 
+          - mariadb
+          - mariadb-server
+          - httpd
+        state: absent

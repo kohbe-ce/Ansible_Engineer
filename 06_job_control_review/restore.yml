@@ -1,0 +1,16 @@
+---
+- name: 잡 제어 예제 - retore
+  hosts: webservers
+  vars_files: vars.yml
+  tasks:
+    - name: packages remove
+      yum:
+        name: "{{ packages }}"
+        state: absent
+    - name: 방화벽 해제
+      firewalld:
+        service: "{{ item }}"
+        permanent: yes
+        state: disabled
+        immediate:  yes
+      with_items: "{{ fw_port }}"

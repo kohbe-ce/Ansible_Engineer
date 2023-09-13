@@ -1,0 +1,17 @@
+---
+- name: Restore DB작업
+  hosts: all
+  vars:
+    db_packages:
+      - mariadb-server
+      - python3-PyMySQL
+  tasks:
+    - name: packages remove
+      yum:
+        name: "{{ db_packages }}"
+        state: absent
+
+    - name: File Delete
+      shell: 
+        cmd: "> /etc/motd"
+      changed_when: false
