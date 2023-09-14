@@ -1,0 +1,11 @@
+---
+- name: Restore mord.yml
+  gather_facts: no
+  hosts: all
+  tasks:
+    - name: /etc/motd 복원
+      shell:
+        cmd: '> /etc/motd'
+      changed_when: false
+
+        

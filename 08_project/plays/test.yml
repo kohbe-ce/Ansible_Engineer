@@ -1,0 +1,10 @@
+---
+- name: 웹페이지 테스트
+  hosts: localhost
+  become: no
+  gather_facts: no
+  tasks:
+    - name: connect to internet web server
+      uri:
+        url: "{{ url }}"
+        status_code: 200

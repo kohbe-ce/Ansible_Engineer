@@ -20,6 +20,6 @@ web4
 EOF
 
 
-#$ mkdir -p ~/ansible/06_hosts && cd ~/ansible/06_hosts
+#$ cd ~/ansible/06_hosts
 #$ chmod 755 ~/bin/ansinit
-#$ ansinit
+#$ ansinit  파일을 생성할 폴더 내에서 실행

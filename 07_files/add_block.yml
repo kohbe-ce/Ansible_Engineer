@@ -1,0 +1,28 @@
+---
+- name: 파일에 여러줄 추가 예제
+  hosts: all
+  gather_facts: no
+  tasks:
+    - name: 파일에 여러줄 추가 -> /home/devops/users.txt
+      blockinfile:
+        path: /home/devops/users.txt
+        block: |
+          아아아아아아ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ
+          아ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ아ㅏ
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          아ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ
+          아아아아아아아아아
+        state: present

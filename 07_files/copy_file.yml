@@ -1,0 +1,12 @@
+---
+- name: copy MODUEL  
+  hosts: all
+  tasks:
+    - name: 파일 저송 - /home/devops/users.txt
+      copy:
+        src: files/users.txt
+        dest: /home/devops/users.txt
+        owner: devops
+        group: devops
+        mode: '0660'
+
